@@ -1,3 +1,14 @@
+.container {
+	background-color: yellow;
+}
+
+.jumbo {
+	text-align: center;
+	align-content: center;
+	background-color: blue;
+	border: 2px solid black;
+}
+
 .App {
   text-align: center;
 }
@@ -8,7 +19,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -21,6 +32,7 @@
 .App-link {
   color: #61dafb;
 }
+
 
 @keyframes App-logo-spin {
   from {

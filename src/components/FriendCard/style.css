@@ -13,17 +13,13 @@
   height: 100%;
   overflow: hidden;
   text-align: center;
-  background:#6CADDC;
+  background: white;
+  border: 2px solid black;
 }
 .card > .img-container > img {
-  width: 50%
+  width: 100%
 }
 
-.card > .content {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-size: 15px;
-}
 
 .card > .content > ul {
   list-style-type: none;
