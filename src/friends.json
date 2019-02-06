@@ -1,75 +1,50 @@
 [
   {
     "id": 1,
-    "image": "./images/s1.jpg",
-    "occupation": "Fry Cook",
-    "location": "A Pineapple Under the Sea"
+    "image": "./images/s1.jpg"
   },
   {
     "id": 2,
-    "image": "./images/s2.jpg",
-    "occupation": "Restaurant Owner",
-    "location": "A Giant Anchor"
+    "image": "./images/s2.jpg"
   },
   {
     "id": 3,
-    "image": "./images/s3.jpg",
-    "occupation": "Cashier",
-    "location": "An Easter Island Head"
+    "image": "./images/s3.jpg"
   },
   {
     "id": 4,
-    "image": "./images/s4.jpg",
-    "occupation": "Boy Genius",
-    "location": "A Secret Laboratory"
+    "image": "./images/s4.jpg"
   },
   {
     "id": 5,
-    "image": "./images/s5.jpg",
-    "occupation": "A Cowardly Dog",
-    "location": "Nowhere, Kansas"
+    "image": "./images/s5.jpg"
   },
   {
     "id": 6,
-    "image": "./images/s6.png",
-    "occupation": "Student",
-    "location": "Bluffington"
+    "image": "./images/s6.png"
   },
   {
     "id": 7,
-    "image": "./images/s7.png",
-    "occupation": "Looney Toon",
-    "location": "A Rabbit Burrow"
+    "image": "./images/s7.png"
   },
   {
     "id": 8,
-    "image": "./images/s8.jpg",
-    "occupation": "Ladies Man",
-    "location": "Aron City"
+    "image": "./images/s8.jpg"
   },
   {
     "id": 9,
-    "image": "./images/s9.jpg",
-    "occupation": "Adventurer",
-    "location": "California"
+    "image": "./images/s9.jpg"
   },
   {
     "id": 10,
-    "image": "./images/s10.jpg",
-    "occupation": "Cashier",
-    "location": "O-Town, California"
+    "image": "./images/s10.jpg"
   },
   {
     "id": 11,
-    "image": "./images/s11.jpg",
-    "occupation": "Superhero",
-    "location": "Earth"
+    "image": "./images/s11.jpg"
   },
   {
     "id": 12,
-    "image": "./images/s12.jpg",
-    "occupation": "Ahhhh! A Real Monster!",
-    "location": "Under a City Dump"
+    "image": "./images/s12.jpg"
   }
 ]
-	

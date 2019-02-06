@@ -6,61 +6,107 @@ import friends from "./friends.json";
 
 class App extends Component {
   // Setting this.state.friends to the friends json array
+   
   state = {
-    friends
+    friends,
+	score: 0,
+	highestscore: 0,
+	visited: [],
+	styling: "App-link"
   };
-
-  removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
+	  // Logic:
+  	  // if this image is already clicked
+	  //  	reset the score to 0 and check if current score is higher then highestscore. set high score accordingly.
+	  //  	shake the page and reload
+	  // if the image is not clicked, push the index of the image into visited array.
+	  // 	add 1 to currentScore
+	  // 	shuffle the image array
+  DoTheAction = id => {	  
+   
+   // image not yet visited
+   if (this.state.visited.indexOf(id)> -1)
+   {
+	    // but may be start of new game
+	   if (this.state.friends.length === this.state.score)
+	   {
+		   alert ("Hurray!! Congratulation Winner!! ");
+			this.setState({
+						friends,
+						visited:[],												
+						highestscore: this.state.score,
+						score: 0,
+				});
+	   }
+	   else
+	   {
+	   // image already clicked and new high score
+	   if (this.state.score > this.state.highestscore)
+	   {
+		   this.state.highestscore = this.state.score ;
+		   this.setState({
+						friends,
+						visited:[],						
+						highestscore: this.state.score,
+						score: 0,
+						styling: "shakepage",
+				});
+	   }	   
+	   else
+	   {	   
+					this.setState({
+						friends,
+						visited:[],						
+						highestscore: this.state.score,
+						score: 0,
+						styling: "shakepage",
+				});
+	   }
+   }
+   }
+   else
+   {
+	   // image not yet visited
+	   if (this.state.friends.length === this.state.score)
+	   {
+		   alert ("Hurray!! Congratulation Winner!! ");
+			this.setState({
+						friends,
+						visited:[],												
+						highestscore: this.state.score,
+						score: 0,
+				});
+	   }
+	   else
+	   {
+		   // game going on
+				this.setState({
+						friends,
+						visited: this.state.visited.concat(id),
+						score: this.state.score + 1,
+				});
+	   }
+   }
+   console.log (this.state.visited);
+   console.log (this.state.score);
   };
   
-/*
-  shuffleFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
-  };
-*/  
-
-  shuffleArray = friends => {
-  const array = [];
-  let i = this.state.friends.length - 1;
-  /*
-  for (; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = this.state.friends[i];
-    this.state.friends[i] = this.state.friends[j];
-    this.state.friends[j] = temp;
-  }
-  */
-  //this.setState({ friends });
-  return array;
-};
-
   
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
       <div>
-	  <Navbar />
-	  
+	  <Navbar score={this.state.score} highestscore={this.state.highestscore} />	  
 	  <span className="jumbo">
-	  <h1 className="text-center text-danger"><p></p>Click on an image to earn points, but don't click on any more than once!<p></p></h1>
+	  <h2 className="text-center text-danger"><p></p>Click on an image to earn points, but don't click on any more than once!<p></p></h2>
 	  </span>
-	  <Wrapper>
+	  <Wrapper className={this.state.styling}>
         {this.state.friends.map(friend => (
           <FriendCard
-            removeFriend={this.removeFriend}
+            DoTheAction={this.DoTheAction}
             id={friend.id}
             key={friend.id}
             name={friend.name}
-            image={friend.image}
-            occupation={friend.occupation}
-            location={friend.location}
+            image={friend.image}           
           />
         ))}
       </Wrapper>

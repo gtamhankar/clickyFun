@@ -5,7 +5,9 @@ function FriendCard(props) {
   return (
     <div className="card">
       <div className="img-container">
-        <img alt={props.name} src={props.image} onClick={() => props.shuffleArray(props.friends)} className="remove" />
+        <img alt={props.name} 
+		src={props.image} 
+		onClick={() => props.DoTheAction(props.id)} className="remove" />
 	   </div>
     </div>
   );
